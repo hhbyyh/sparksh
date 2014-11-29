@@ -12,7 +12,7 @@ mv jdk1.8.0_25 /usr/share/ -f
 echo "Setting up env. variable JAVA_HOME..."
 
 cat > /etc/profile.d/java-home.sh << "EOF"
-export JAVA_HOME="usr/share/jdk1.8.0_25"
+export JAVA_HOME="/usr/share/jdk1.8.0_25"
 export PATH="$JAVA_HOME/bin:$PATH"
 EOF
 chmod 777 /etc/profile.d/java-home.sh
@@ -35,6 +35,7 @@ mkdir /home/admin/spark
 cd /home/admin/spark
 
 wget http://d3kbcqa49mib13.cloudfront.net/spark-1.1.0-bin-hadoop1.tgz > /dev/null
+tar zxvf spark-1.1.0-bin-hadoop1.tgz
 
 cd ..
 mkdir workspace 
